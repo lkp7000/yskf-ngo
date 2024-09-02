@@ -1,0 +1,22 @@
+{
+    "name": "yskf-project",
+    "version": "1.0.0",
+    "description": "Yogeshwar Shri Krishna Foundation project",
+    "main": "server/index.js",
+    "scripts": {
+      "start": "concurrently \"npm run start:client\" \"npm run start:server\"",
+      "start:client": "npm run start --prefix client",
+      "start:server": "npm run start --prefix server",
+      "install:client": "npm install --prefix client",
+      "install:server": "npm install --prefix server",
+      "install:all": "npm run install:client && npm run install:server",
+      "build": "npm run build --prefix client",
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "yskf",
+    "license": "ISC",
+    "dependencies": {
+      "concurrently": "^8.0.1"
+    }
+}
+  

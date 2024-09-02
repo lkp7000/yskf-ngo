@@ -1,0 +1,21 @@
+runtime: nodejs20
+
+handlers:
+  # Serve JavaScript files with the correct MIME type
+  - url: /(.*\.js)$
+    static_files: dist/\1
+    upload: dist/(.*\.js)$
+    mime_type: application/javascript
+    secure: always
+
+  # Serve all other static files with url ending with a file extension
+  - url: /(.*\..+)$
+    static_files: dist/\1
+    upload: dist/(.*\..+)$
+    secure: always
+
+  # Catch all handler to index.html
+  - url: /.*
+    static_files: dist/index.html
+    upload: dist/index.html
+    secure: always
